@@ -14,7 +14,7 @@ Exemplo de Entrada 	Exemplo de Saída
 
 */
 
-const greetings: string[] = ["Hello,", "World!"];
+const greetings: string[] = ["Hello", "World!"];
 
 function printMessage(items: string[]) {
   const fullMessage: string = items.join(" ");
