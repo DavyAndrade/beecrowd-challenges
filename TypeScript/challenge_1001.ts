@@ -18,36 +18,28 @@ Exemplos de Entrada 	Exemplos de Saída
 -7
 */
 
+import * as fs from "fs"; // import do FileSystem
+
+const input: string = fs.readFileSync("/dev/stdin", "utf-8"); // leitura de um arquivo de forma síncrona
+const lines: string[] = input.split("\n"); // divisão da string em array
+
+// main function
 function main() {
-  // Read 'A' value
-  let a: number = Number(prompt("Insert the first value:"));
+  const a: number = parseInt(lines[0]); // retorna o primeiro elemento do array e converte para number
+  const b: number = parseInt(lines[1]); // retorna o segundo elemento do array e converte para number
 
-  // Treatment of "A" value
-  if (Number.isNaN(a)) {
-    console.log("Insert a valid value!");
+  // verificando se as entradas são números
+  if (isNaN(a) || isNaN(b)) {
+    console.log("Valores inválidos!");
     return;
   }
 
-  // Read 'B' value
-  let b: number = Number(prompt("Insert the second value:"));
+  // inicializando a var "X" com a soma de a + b
+  const x: number = a + b;
 
-  // Treatment of "B" value
-  if (Number.isNaN(b)) {
-    console.log("Insert a valid value!");
-    return;
-  }
-
-  // Calling sum function with "X" var
-  let x: number = sum(a, b);
-
-  // Printing de "X" value
+  // exibição do valor de X
   console.log("X = " + x);
 }
 
-// Sum function
-function sum(x: number, y: number) {
-  return x + y;
-}
-
-// init main function
+// inicializando a main
 main();
