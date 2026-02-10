@@ -13,24 +13,26 @@ Exemplos de Entrada 	Exemplos de Saída
 2.00                    A=12.5664
 100.64                  A=31819.3103
 150.00                  A=70685.7750
- */
+*/
 
-import * as fs from "fs";
+import { readFileSync } from "fs"; // importação da bilioteca filesystem
 
-const input: string = fs.readFileSync("/dev/stdin", "utf-8");
-const pi: number = 3.14159;
+const input: string = readFileSync("/dev/stdin", "utf-8"); // constante de input
+const pi: number = 3.14159; // constante do pi
 
+// function main
 function main(): void {
-  const raio = parseFloat(input.trim());
+  const raio = parseFloat(input.trim()); // const do raio convertida para float (retirando os espaços em branco)
 
+  // Verificando se a const raio é 'number'
   if (isNaN(raio)) {
     console.log("Insira um valor válido!");
     return;
   }
 
-  const area = pi * Math.pow(raio, 2);
+  const area = pi * Math.pow(raio, 2); // const da area com uso de Math
 
-  console.log("A=" + area.toFixed(4));
+  console.log("A=" + area.toFixed(4)); // exibindo a área com limite de 4 números após a vírgula
 }
 
-main();
+main(); // chamada da main

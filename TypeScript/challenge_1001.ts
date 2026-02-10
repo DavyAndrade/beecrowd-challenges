@@ -18,9 +18,9 @@ Exemplos de Entrada 	Exemplos de Saída
 -7
 */
 
-import * as fs from "fs"; // import do FileSystem
+import { readFileSync } from "fs"; // importação da bilioteca filesystem
 
-const input: string = fs.readFileSync("/dev/stdin", "utf-8"); // leitura de um arquivo de forma síncrona
+const input: string = readFileSync("/dev/stdin", "utf-8"); // leitura de um arquivo de forma síncrona
 const lines: string[] = input.split("\n"); // divisão da string em array
 
 // main function
